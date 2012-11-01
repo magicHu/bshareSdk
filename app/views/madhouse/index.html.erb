@@ -1,2 +1,24 @@
-<h1>Madhouse#index</h1>
-<p>Find me in app/views/madhouse/index.html.erb</p>
+<h1>Madhouse</h1>
+
+<div class="alert alert-success">
+	madhouse user profile
+</div>
+<ul>
+	<% @madhouse_urls.each do |site, url|  %>
+		<li>
+			<a href="<%= url %>" target="_blank"><%= site %> : user profile</a>
+		</li>
+	<% end %>
+</ul>
+
+
+<div class="alert alert-success">
+  madhouse user follow
+</div>
+<ul>
+	<% @user_follow_urls.each do |site, url|  %>
+		<li>
+			<a href="<%= url %>" target="_blank"><%= site %> : user follow</a>
+		</li>
+	<% end %>
+</ul>
