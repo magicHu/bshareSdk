@@ -1,5 +1,11 @@
 BshareSdk::Application.routes.draw do
 
+  get "alipay/index"
+
+  get "api/index"
+
+  get "sns_oauth/index"
+
   # The priority is based upon order of creation:
   # first created -> highest priority.
 

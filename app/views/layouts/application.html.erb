@@ -50,6 +50,8 @@
               <li><%= link_to "Home", root_path  %></li>
               <li><%= link_to "Bshare Button", '/bshare_button'  %></li>
               <li><%= link_to "MadHouse", '/madhouse'  %></li>
+              <li><%= link_to "SNS Oauth", '/sns_oauth'  %></li>
+              <li><%= link_to "Bshare API", '/api'  %></li>
             </ul>
           </div><!--/.nav-collapse -->
         </div>
@@ -60,9 +62,7 @@
       <%= bootstrap_flash %>
 
       <div class="content">
-        <div class="row">
           <%= yield %>
-        </div><!--/row-->
       </div><!--/content-->
 
       <footer style="margin-top: 50px;">

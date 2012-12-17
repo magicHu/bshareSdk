@@ -1,0 +1,56 @@
+<div class="tabbable tabs-left">
+  <ul class="nav nav-tabs">
+    <li class="active"><a href="#bshare-button" data-toggle="tab">Bshare Button</a></li>
+    <li><a href="#madhouse" data-toggle="tab">MadHouse</a></li>
+    <li><a href="#sns-oauth" data-toggle="tab">SNS Oauth</a></li>
+    <li><a href="#bshare-api" data-toggle="tab">Bshare API</a></li>
+    <li><a href="#bshare-alipay" data-toggle="tab">Bshare Alipay</a></li>
+  </ul>
+  <div class="tab-content">
+    <div class="tab-pane active" id="bshare-button">
+      <div class="page-header">
+        <h1>Bshare Button</h1>
+      </div>
+      <ul>
+        <li><%= link_to 'Bshare Button', '/bshare_button', { 'target' => '_blank' } %></li>
+        <li><%= link_to 'Bshare Button Local', '/bshare_button?server=local', { 'target' => '_blank' } %></li>
+      </ul>
+    </div>
+    <div class="tab-pane" id="madhouse">
+      <div class="page-header">
+        <h1>MadHouse</h1>
+      </div>
+      <ul>
+        <li><%= link_to 'Madhouse', '/madhouse', { 'target' => '_blank' } %></li>
+        <li><%= link_to 'Madhouse Local', '/madhouse?server=local', { 'target' => '_blank' } %></li>
+      </ul>
+    </div>
+    <div class="tab-pane" id="sns-oauth">
+      <div class="page-header">
+        <h1>SNS Oauth</h1>
+      </div>
+      <ul>
+        <li><%= link_to 'SNS Oauth', '/sns_oauth', { 'target' => '_blank' } %></li>
+        <li><%= link_to 'SNS Oauth Local', '/sns_oauth?server=local', { 'target' => '_blank' } %></li>
+      </ul>
+    </div>
+    <div class="tab-pane" id="bshare-api">
+      <div class="page-header">
+        <h1>Bshare API</h1>
+      </div>
+      <ul>
+        <li><%= link_to 'Bshare API', '/api', { 'target' => '_blank' } %></li>
+        <li><%= link_to 'Bshare API Local', '/api?server=local', { 'target' => '_blank' } %></li>
+      </ul>
+    </div>
+    <div class="tab-pane" id="bshare-alipay">
+      <div class="page-header">
+        <h1>Bshare Alipay</h1>
+      </div>
+      <ul>
+        <li><%= link_to 'Bshare Alipay', '/alipay', { 'target' => '_blank' } %></li>
+        <li><%= link_to 'Bshare Alipay Local', '/alipay?server=local', { 'target' => '_blank' } %></li>
+      </ul>
+    </div>
+  </div>
+</div>
