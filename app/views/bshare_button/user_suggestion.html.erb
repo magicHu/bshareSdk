@@ -1,0 +1,14 @@
+
+
+<%= form_tag(:action => "get_user_suggestion", :method => 'post', :id => 'user_suggestion_div') do %>
+
+  <%= hidden_field_tag :server, params[:server] %>
+  <div>
+  	<%= label_tag :keyword %>
+    <%= text_field_tag :keyword %>
+  </div>
+
+  <div><%= submit_tag "User suggestion" %></div>
+<% end %>
+
+<div id="response"></div>

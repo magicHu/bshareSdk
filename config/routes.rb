@@ -1,10 +1,11 @@
 BshareSdk::Application.routes.draw do
 
-  get "alipay/index"
 
-  get "api/index"
+  get "bshare_button/user_suggestion"
 
-  get "sns_oauth/index"
+  get "jquery/index"
+
+  get "jquery/plugin"
 
   # The priority is based upon order of creation:
   # first created -> highest priority.

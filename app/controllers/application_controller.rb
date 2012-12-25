@@ -7,6 +7,9 @@ class ApplicationController < ActionController::Base
 	@@base_one_url = "http://one.bshare.cn"
 	@@base_one_local_url = "http://one.bshare.local/bshare_passport"
 
+	@@base_button_url ="http://b.bshare.cn"
+	@@base_button_local_url = "http://button.bshare.local/bshare_button"
+
 	@@base_points_url = "http://points.bshare.cn"
 	@@base_points_local_url = "http://points.bshare.local/bshare_points"
 
@@ -19,12 +22,18 @@ class ApplicationController < ActionController::Base
 	@@sns_oauth_url = "http://one.bshare.cn/oauth/authentication"
 	@@sns_oauth_local_url = "http://one.bshare.local/bshare_passport/oauth/authentication"
 
+  @@user_name = {}
+  @@password = { 'kaixin001' => 'niuniu520' }
+
 	protected
+		def sign(params)
+			sign(params, secret)
+		end
+
 		def sign(params, secret)
-			sign_str = params_to_sign_str(params) + secret
-			puts sign_str
-		  	return Digest::MD5.hexdigest(sign_str)
-		  end
+			@sign_str = params_to_sign_str(params) + secret
+	  	return Digest::MD5.hexdigest(@sign_str)
+		end
 
 		def params_to_sign_str(params)
 		  	params_str = ''
@@ -69,6 +78,14 @@ class ApplicationController < ActionController::Base
 				@@base_points_local_url
 			else 
 				@@base_points_url
+			end
+		end
+
+		def button_base_url
+			if is_local
+				@@base_button_local_url
+			else
+				@@base_button_url
 			end
 		end
 

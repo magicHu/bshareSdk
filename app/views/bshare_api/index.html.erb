@@ -6,4 +6,8 @@
 	<li><%= link_to 'User Follower API', @user_follower_url, { 'target' => '_blank' } %></li>
 	<li><%= link_to 'User Active Follower API', @user_active_follower_url, { 'target' => '_blank' } %></li>
 	<li><%= link_to 'User Profile API', @user_profile_url, { 'target' => '_blank' } %></li>
+
+	<% @user_share_v2_urls.each do |site, user_share_v2_url| %>
+		<li><%= link_to "Share V2 API #{site}", user_share_v2_url, { 'target' => '_blank' } %></li>
+	<% end %>
 </ul>

@@ -27,6 +27,15 @@ gem 'bootstrap-sass'
 # http client
 gem 'faraday'
 
+# RESTful API
+gem 'grape'
+
+# 禁用 assets 日志
+gem 'quiet_assets', "~> 1.0.1"
+
+gem 'rest-client'
+gem 'simple_form'
+
 # To use ActiveModel has_secure_password
 # gem 'bcrypt-ruby', '~> 3.0.0'
 

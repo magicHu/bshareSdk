@@ -1,0 +1,99 @@
+<h1>Css#position</h1>
+
+<style type="text/css">
+#branding {
+	width: 70em;
+	height: 10em;
+	position: relative;
+}
+#branding .tel {
+	position: absolute;
+	right: 1em;
+	bottom: 1em;
+	text-align: right;
+}
+
+.avatar {
+	float: left;
+}
+.news {
+	background-color: gray;
+	border: solid 1px black;
+	float: left;
+}
+.news img {
+	float: left;
+}
+.news p {
+	margin-left: 10px;
+	float: right;
+}
+
+.clear {
+	clear: both;
+}
+.clear:after {
+	content: ".";
+	height: 0;
+	visibility: false;
+	display: block;
+	clear: both;
+}
+
+</style>
+
+<div id="branding">
+	<p class="tel">Tel: 0845 838 6163</p>
+</div>
+
+<div>
+	<%= image_tag("rails.png", :class => "avatar") %>
+	You learned in the previous section that floating an element takes it out of the flow of the
+document where it no longer exerts an effect on non-floated items. Actually, this isn’t strictly true.
+
+	<br/><br/>
+	If a floated element is followed by an element in the flow of the document, the element’s box will
+	behave as if the float didn’t exist. However, the textural content of the box retains some memory
+	of the floated element and moves out of the way to make room. In technical terms, a line box next
+	to a floated element is shortened to make room for the floated element, thereby flowing around
+	the floated box. In fact, floats were created to allow text to flow around images (see Figure 3-16).
+</div>
+
+<div class="news clear">
+	<%= image_tag("rails.png") %>
+	<p>You learned in the previous .</p>
+</div>
+<div class="clear"></div>
+
+<div style="visibility: hidden;">
+	<span style="color:red;">visibility:hidden</span> You learned in the previous section that floating an element takes it out of the flow of the
+document where it no longer exerts an effect on non-floated items. Actually, this isn’t strictly true.
+</div>
+
+<div>
+	wo men shi guan jun~
+</div>
+
+<div>
+	<ul class="rails-menu">My Rails Menu
+		<li>a</li>
+		<li>b</li>
+		<li>c</li>
+		<li>d</li>
+		<li>e</li>
+	</ul>
+</div>
+
+
+<div class="box">
+	<h2>Headline</h2>
+	<p>Content</p>
+</div>
+
+<div class="alert">
+	<h2>Opacity~</h2>
+	<p>As with opacity, the last number is the
+decimal value of opacity, so 0.8 means this background will be 80 percent opaque, or to put it
+another way, 20 percent transparent.
+</p>
+</div>
