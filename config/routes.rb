@@ -1,6 +1,8 @@
 BshareSdk::Application.routes.draw do
 
 
+  get "bshare_one/index"
+
   get "bshare_button/user_suggestion"
 
   get "jquery/index"
