@@ -27,11 +27,11 @@ class BshareOneController < ApplicationController
   end
 
   def websiteCustomizeEmbed
-    "#{website_base_url}/websiteCustomizeEmbed?email=#{username}&password=#{password}"
+    "#{website_base_url}/websiteCustomizeEmbed?email=#{bshare_user}&password=#{bshare_password}"
   end
 
   def bsyncCustomizeManagerEmbed
-    "#{website_base_url}/bsyncCustomizeManagerEmbed?email=#{username}&password=#{password}"
+    "#{website_base_url}/bsyncCustomizeManagerEmbed?email=#{bshare_user}&password=#{bshare_password}"
   end
 
 end

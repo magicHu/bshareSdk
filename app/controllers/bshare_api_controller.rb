@@ -24,7 +24,7 @@ class BshareApiController < ApplicationController
   def user_share_v2_url
 
     @user_share_v2_urls = {}
-    ["sohuminiblog", "kaixin001"].each do |site|
+    ["sohuminiblog", "kaixin001", "renren"].each do |site|
       @user_share_v2_urls[site] = share_v2_url(site)
     end
     @user_share_v2_urls
@@ -46,11 +46,4 @@ class BshareApiController < ApplicationController
     return generate_url(@user_share_v2_url, params)
   end
 
-  def user_name(site)
-    @@user_name[site] || "sanford091@qq.com"
-  end
-
-  def password(site)
-    @@password[site] || "niu520"
-  end
 end

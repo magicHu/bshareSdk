@@ -26,8 +26,8 @@ class ApplicationController < ActionController::Base
 	@@sns_oauth_url = "http://one.bshare.cn/oauth/authentication"
 	@@sns_oauth_local_url = "http://one.bshare.local/bshare_passport/oauth/authentication"
 
-  @@user_name = {}
-  @@password = { 'kaixin001' => 'niuniu520' }
+  @@user_name = {  'renren' => 'huronghai2008@gmail.com' }
+  @@password = { 'kaixin001' => 'niuniu520', 'renren' => 'abcd.1234'  }
 
   @@bshare_user = "publisher@magic.com"
   @@bshare_password = "test"
@@ -123,12 +123,20 @@ class ApplicationController < ActionController::Base
 	  	params_str.slice(0, params_str.length - 1)
 	  end
 
-	  def username
+	  def bshare_user
 	  	@@bshare_user
 	  end
 
-	  def password
+	  def bshare_password
 	  	@@bshare_password
 	  end
 
+
+	  def user_name(site)
+	    @@user_name[site] || "sanford091@qq.com"
+	  end
+
+	  def password(site)
+	    @@password[site] || "niu520"
+	  end
 end
