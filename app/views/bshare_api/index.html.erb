@@ -11,3 +11,18 @@
 		<li><%= link_to "Share V2 API #{site}", user_share_v2_url, { 'target' => '_blank' } %></li>
 	<% end %>
 </ul>
+
+
+<h3 class="page-header">Invalid user</h3>
+<ul>
+      <% @invalid_user_share_v2_urls.each do |site, user_share_v2_url| %>
+        <li><%= link_to "Share V2 API #{site}", user_share_v2_url, { 'target' => '_blank' } %></li>
+      <% end %>
+</ul>
+
+<h3>Feed</h3>
+<ul>
+  <% @feeds.each do |key, value| %>
+    <li><%= link_to "#{key} feed", value, { 'target' => '_blank' } %></li>
+  <% end %>
+</ul>

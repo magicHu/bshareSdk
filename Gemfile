@@ -13,6 +13,9 @@ gem 'mysql2'
 group :assets do
   gem 'sass-rails',   '~> 3.2.3'
   gem 'coffee-rails', '~> 3.2.1'
+	gem 'bootstrap-sass', '~> 2.3.1.0'
+  gem 'compass-rails'
+  gem 'font-awesome-sass-rails'
 
   # See https://github.com/sstephenson/execjs#readme for more supported runtimes
   # gem 'therubyracer', :platforms => :ruby
@@ -21,8 +24,6 @@ group :assets do
 end
 
 gem 'jquery-rails'
-gem "twitter-bootstrap-rails"
-gem 'bootstrap-sass'
 
 # http client
 gem 'faraday'
@@ -54,4 +55,11 @@ gem 'simple_form'
 group :development do
 	gem "better_errors"
 	gem "binding_of_caller"
+  
+  gem 'guard-livereload'
+  gem 'rb-inotify', :require => false
+  gem 'rb-fsevent', :require => false
+  gem 'rb-fchange', :require => false
+
+  gem 'pry-rails'
 end

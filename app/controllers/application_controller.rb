@@ -13,6 +13,9 @@ class ApplicationController < ActionController::Base
 	@@base_points_url = "http://points.bshare.cn"
 	@@base_points_local_url = "http://points.bshare.local/bshare_points"
 
+	@@base_api_url = "http://api.bshare.cn"
+	@@base_api_local_url = "http://api.bshare.local/bshare_api"
+
 	@@uuid_local = '5a38b99e-576c-48b3-a383-facf7fc86505'
 	@@secret_local = '7ec6e6a0-d15e-42d7-9d0a-d0ca2b246ebb'
 
@@ -26,8 +29,8 @@ class ApplicationController < ActionController::Base
 	@@sns_oauth_url = "http://one.bshare.cn/oauth/authentication"
 	@@sns_oauth_local_url = "http://one.bshare.local/bshare_passport/oauth/authentication"
 
-  @@user_name = {  'renren' => 'huronghai2008@gmail.com' }
-  @@password = { 'kaixin001' => 'niuniu520', 'renren' => 'abcd.1234'  }
+  @@user_name = {  'renren' => 'sanford091@qq.com' }
+  @@password = { 'kaixin001' => 'niuniu520', 'renren' => 'niuniu520'  }
 
   @@bshare_user = "publisher@magic.com"
   @@bshare_password = "test"
@@ -67,15 +70,23 @@ class ApplicationController < ActionController::Base
 		def website_base_url
 			if is_local
 				@@base_website_local_url
-			else 
+			else
 				@@base_website_url
 			end
 		end
 
+	  def api_base_url
+	    if is_local
+	    	@@base_api_local_url
+	    else
+	    	@@base_api_url
+	    end
+	  end
+
 		def one_base_url
 			if is_local
 				@@base_one_local_url
-			else 
+			else
 				@@base_one_url
 			end
 		end
@@ -83,7 +94,7 @@ class ApplicationController < ActionController::Base
 		def points_base_url
 			if is_local
 				@@base_points_local_url
-			else 
+			else
 				@@base_points_url
 			end
 		end
@@ -99,7 +110,7 @@ class ApplicationController < ActionController::Base
 		def sns_oauth_url
 			if is_local
 				@@sns_oauth_local_url
-			else 
+			else
 				@@sns_oauth_url
 			end
 		end

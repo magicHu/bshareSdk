@@ -1,5 +1,6 @@
 body {
 	background: url(bg.png);
+	padding-top: 80px;
 }
 
 
@@ -35,4 +36,16 @@ body {
 	position: absolute;
 	left: 400px;
 	top: 120px;
+}
+
+.global-notice {
+	width: 100%;
+	padding: 5px;
+	background-color: #ffe3bf;
+	border-bottom: 1px solid #FD9800;
+}
+
+.notice-inner {
+	width: 940px;
+	margin: 0 auto;
 }
