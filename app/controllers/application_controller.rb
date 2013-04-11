@@ -23,14 +23,11 @@ class ApplicationController < ActionController::Base
 	@@uuid = 'e2272e96-311e-493a-ac48-4f4d31e58af9'
 	@@secret = '3037299e-3932-45f9-8a8c-cc93e249c117'
 
-	#@@uuid = 'ca720443-9e43-4408-9cee-b1b0dca57ab1'
-	#@@secret = '2c63b599-0a1e-4649-a01a-d3e7ba8185e7'
-
 	@@sns_oauth_url = "http://one.bshare.cn/oauth/authentication"
 	@@sns_oauth_local_url = "http://one.bshare.local/bshare_passport/oauth/authentication"
 
-  @@user_name = {  'renren' => 'sanford091@qq.com' }
-  @@password = { 'kaixin001' => 'niuniu520', 'renren' => 'niuniu520'  }
+	@@user_name = {'renren' => 'sanford091@qq.com'}
+  @@password = {'kaixin001' => 'niuniu520', 'renren' => 'niuniu520'}
 
   @@bshare_user = "publisher@magic.com"
   @@bshare_password = "test"
@@ -47,7 +44,8 @@ class ApplicationController < ActionController::Base
 
 		def params_to_sign_str(params)
 		  	params_str = ''
-		  	params.sort.each { |key, value|  params_str << key << "=" << value.to_s}
+		  	params = params.sort {|x, y| x.to_s <=> y.to_s }
+		  	params.each { |key, value|  params_str << key.to_s << "=" << value.to_s}
 		  	params_str
 		end
 
@@ -130,7 +128,7 @@ class ApplicationController < ActionController::Base
 
 	  def params_to_url_str(params)
 	  	params_str = ''
-	  	params.each { |key, value|  params_str << key << "=" << URI.escape(value.to_s) << "&"}
+	  	params.each { |key, value|  params_str << key.to_s << "=" << URI.escape(value.to_s) << "&"}
 	  	params_str.slice(0, params_str.length - 1)
 	  end
 
@@ -142,6 +140,13 @@ class ApplicationController < ActionController::Base
 	  	@@bshare_password
 	  end
 
+	  def sns_user_name(site)
+	  	user_name(site)
+	  end
+
+	  def sns_password(site)
+	  	password(site)
+	  end
 
 	  def user_name(site)
 	    @@user_name[site] || "sanford091@qq.com"
@@ -150,4 +155,13 @@ class ApplicationController < ActionController::Base
 	  def password(site)
 	    @@password[site] || "niu520"
 	  end
+
+	  def add_uuid_secret_ts(params = nil)
+	    params = params || {}
+	    params[:ts] = Time.now.to_i * 1000
+	    params[:publisherUuid] = uuid
+	    params[:sig] = sign(params, secret)
+	    params
+	  end
+
 end

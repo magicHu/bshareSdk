@@ -24,6 +24,7 @@ group :assets do
 end
 
 gem 'jquery-rails'
+gem 'backbone-on-rails', '~> 1.0.0.0'
 
 # http client
 gem 'faraday'

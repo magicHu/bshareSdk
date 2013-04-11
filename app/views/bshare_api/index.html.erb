@@ -7,22 +7,20 @@
 	<li><%= link_to 'User Active Follower API', @user_active_follower_url, { 'target' => '_blank' } %></li>
 	<li><%= link_to 'User Profile API', @user_profile_url, { 'target' => '_blank' } %></li>
 
-	<% @user_share_v2_urls.each do |site, user_share_v2_url| %>
-		<li><%= link_to "Share V2 API #{site}", user_share_v2_url, { 'target' => '_blank' } %></li>
-	<% end %>
 </ul>
 
-
-<h3 class="page-header">Invalid user</h3>
+<h3 class="page-header">user active follower <button class="btn btn-primary active-api-btn">active</button></h3>
 <ul>
-      <% @invalid_user_share_v2_urls.each do |site, user_share_v2_url| %>
-        <li><%= link_to "Share V2 API #{site}", user_share_v2_url, { 'target' => '_blank' } %></li>
-      <% end %>
-</ul>
-
-<h3>Feed</h3>
-<ul>
-  <% @feeds.each do |key, value| %>
-    <li><%= link_to "#{key} feed", value, { 'target' => '_blank' } %></li>
+  <% @user_active_follower_urls.each do |site, url| %>
+    <li>
+      <%= link_to site, url, :class =>"api-link" %>
+    </li>
   <% end %>
 </ul>
+
+<script type="text/template" id="response-template">
+  <div class="api-response">
+    <p>{{request_url}}</p>
+    <p>{{response}}</p>
+  </div>
+</script>
