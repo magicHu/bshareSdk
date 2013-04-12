@@ -12,4 +12,7 @@
 //
 //= require jquery
 //= require jquery_ujs
+//= require bootstrap
 //= require mustache
+//= require bootstrap.init
+//= require bshare.api

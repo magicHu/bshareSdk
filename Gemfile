@@ -1,11 +1,11 @@
-source 'http://ruby.taobao.org'
+source 'https://rubygems.org'
 
-gem 'rails', '3.2.8'
+gem 'rails', '3.2.12'
 
 # Bundle edge Rails instead:
 # gem 'rails', :git => 'git://github.com/rails/rails.git'
 
-gem 'mysql2'
+gem 'sqlite3'
 
 
 # Gems used only for assets and not required
@@ -13,7 +13,7 @@ gem 'mysql2'
 group :assets do
   gem 'sass-rails',   '~> 3.2.3'
   gem 'coffee-rails', '~> 3.2.1'
-	gem 'bootstrap-sass', '~> 2.3.1.0'
+  gem 'bootstrap-sass', '~> 2.3.1.0'
   gem 'compass-rails'
   gem 'font-awesome-sass-rails'
 
@@ -24,19 +24,30 @@ group :assets do
 end
 
 gem 'jquery-rails'
+
 gem 'backbone-on-rails', '~> 1.0.0.0'
 
 # http client
 gem 'faraday'
-
 # RESTful API
 gem 'grape'
-
-# 禁用 assets 日志
-gem 'quiet_assets', "~> 1.0.1"
-
 gem 'rest-client'
 gem 'simple_form'
+
+group :development do
+  gem "better_errors"
+  gem "binding_of_caller"
+  # 禁用 assets 日志
+  gem 'quiet_assets', "~> 1.0.1"
+  
+  gem 'guard-livereload'
+  gem 'rb-inotify', :require => false
+  gem 'rb-fsevent', :require => false
+  gem 'rb-fchange', :require => false
+
+  gem 'pry-rails'
+end
+
 
 # To use ActiveModel has_secure_password
 # gem 'bcrypt-ruby', '~> 3.0.0'
@@ -52,15 +63,3 @@ gem 'simple_form'
 
 # To use debugger
 # gem 'debugger'
-
-group :development do
-	gem "better_errors"
-	gem "binding_of_caller"
-  
-  gem 'guard-livereload'
-  gem 'rb-inotify', :require => false
-  gem 'rb-fsevent', :require => false
-  gem 'rb-fchange', :require => false
-
-  gem 'pry-rails'
-end

@@ -44,7 +44,18 @@
             <span class="icon-bar"></span>
             <span class="icon-bar"></span>
           </a>
-          <a class="brand" href="/">BshareSdk</a>
+          <a class="brand" href="/">BshareSdk <%= server %></a>
+
+          <form action="/home/change_server">
+            <div class="pull-right">
+              <select name="server" id="server-select">
+                <option value="local">Local</option>
+                <option value="test">Test</option>
+              </select>
+              <button type="submit" class="btn" id="change-server">Change Server</button>
+            </div>
+          </form>
+
           <div class="container nav-collapse">
             <ul class="nav">
               <li><%= link_to "Home", root_path  %></li>
@@ -52,7 +63,6 @@
               <li><%= link_to "MadHouse", '/madhouse'  %></li>
               <li><%= link_to "SNS Oauth", '/sns_oauth'  %></li>
               <li><%= link_to "Bshare API", '/bshare_api'  %></li>
-              <li><%= link_to "Bshare API Local", '/bshare_api?server=local'  %></li>
               <li><%= link_to "CSS", '/css'  %></li>
               <li><%= link_to "jquery study", '/jquery'  %></li>
               <li><%= link_to "bShare One", '/bshare_one'  %></li>

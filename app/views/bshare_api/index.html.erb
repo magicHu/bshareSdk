@@ -10,7 +10,7 @@
 </ul>
 
 <h3 class="page-header">user active follower <button class="btn btn-primary active-api-btn">active</button></h3>
-<ul>
+<ul class="api-nav">
   <% @user_active_follower_urls.each do |site, url| %>
     <li>
       <%= link_to site, url, :class =>"api-link" %>
@@ -19,7 +19,8 @@
 </ul>
 
 <script type="text/template" id="response-template">
-  <div class="api-response">
+  <div class="alert alert-error api-response">
+    <button type="button" class="close" data-dismiss="alert">&times;</button>
     <p>{{request_url}}</p>
     <p>{{response}}</p>
   </div>

@@ -16,6 +16,16 @@ class BshareApiController < ApplicationController
     end
   end
 
+  def send_http_request
+    begin
+      response = RestClient.get params[:rquest_url]
+      render :text => "HTTP #{response.code} #{response}"
+    rescue Exception => e
+      render :text => "HTTP #{e.response.code} #{e.response}"
+    end
+  end
+
+
   def user_active_follower_url
       # user active follow
       @user_active_follower_urls = {} 

@@ -1,6 +1,6 @@
 module ApplicationHelper
 
-	def server
-		params[:server]
-	end
+  def server
+    session[:server] ||= 'local'
+  end
 end
