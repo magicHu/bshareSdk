@@ -1,0 +1,2 @@
+module BshareLikeHelper
+end

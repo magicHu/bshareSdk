@@ -1,4 +1,10 @@
 BshareSdk::Application.routes.draw do
+  get "backbone_slide_show/index"
+
+  get "bshare_like/index"
+
+  get "bshare_link/index"
+
   # The priority is based upon order of creation:
   # first created -> highest priority.
 

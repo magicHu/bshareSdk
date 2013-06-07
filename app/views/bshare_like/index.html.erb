@@ -1,0 +1,39 @@
+<h3>BshareLink <%= server%></h3>
+
+ <script type="text/javascript">
+    bShareOpt = {
+   url:"http://www.bshare.cn/button12345.html" , 
+   uuid: "196fa269-53fb-4b4a-8e09-3f020219353e", 
+   summary: "测试电商分享并喜欢按钮，最终版本终极测试，附赠小吃旺旺雪饼，让你的牙口更好！嘿嘿", 
+   vUid: "sanford6", 
+   product: "饼干", 
+   price: "0.9999", 
+   brand: "旺旺", 
+   tag: "脆饼", 
+   category: "膨化食品", 
+   template: "1",
+   popcss: "http://test.buzzinate.com/ceshi/xin/dss.css"
+};
+</script>
+
+<a class="bsLikeDiv" href="http://static.bshare.cn"></a>
+
+<script type="text/javascript" charset="utf-8" src="<%= button_js_path('bshareLikeOrg.js') %>"></script>
+<script type="text/javascript" charset="utf-8" src="<%= button_js_path('buttonOrg.js') %>#style=-1&amp;ssc=false&amp;mdiv=-1&amp;type=15"></script>
+<script type="text/javascript" charset="utf-8" src="<%= button_js_path('bshareC1Org.js') %>"></script>
+
+<div class="bshare-custom icon" style="float:left;">
+  <a title="分享到QQ空间" class="bshare-qzone"></a>
+  <a title="分享到新浪微博" class="bshare-sinaminiblog"></a>
+  <a title="分享到人人网" class="bshare-renren"></a>
+  <a title="分享到腾讯微博" class="bshare-qqmb"></a><a title="分享到搜狐微博" class="bshare-sohuminiblog"></a>
+</div>
+
+ <script type="text/javascript">
+bShareLike.addEntry({
+  url: "http://www.bshare.cn/button12345.html"
+});
+bShare.addEntry({
+  url: "http://www.bshare.cn/button12345.html"
+});
+</script>
