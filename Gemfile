@@ -1,4 +1,5 @@
-source 'https://rubygems.org'
+#source 'https://rubygems.org'
+source 'http://ruby.taobao.org'
 
 gem 'rails', '3.2.12'
 
@@ -33,6 +34,8 @@ gem 'faraday'
 gem 'grape'
 gem 'rest-client'
 gem 'simple_form'
+
+gem 'roo'
 
 group :development do
   gem "better_errors"
