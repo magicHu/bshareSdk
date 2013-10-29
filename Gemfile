@@ -36,6 +36,7 @@ gem 'rest-client'
 gem 'simple_form'
 
 gem 'roo'
+gem 'multi_json'
 
 group :development do
   gem "better_errors"
