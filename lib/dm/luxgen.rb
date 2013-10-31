@@ -1,3 +1,4 @@
+# encoding: UTF-8
 # 纳智捷GPK数据分析
 
 require 'multi_json'
@@ -197,11 +198,12 @@ def sort_domain
     domain_counts[domain] = count + 1
   end
 
-  puts "9.域名整体排名"
-  domain_counts.sort_by {|k, v| v}.reverse.slice(0, 10).each do |domain_count|
-    puts "#{domain_count[0]}\t#{domain_count[1]}"
-  end
-  puts "\n"
+  #puts "9.域名整体排名"
+  #domain_counts.sort_by {|k, v| v}.reverse.slice(0, 10).each do |domain_count|
+  #  puts "#{domain_count[0]}\t#{domain_count[1]}"
+  #end
+  #puts "\n"
+  puts MultiJson.dump(domain_counts)
 end
 
 # 10. 每款车型的域名排名
@@ -222,11 +224,12 @@ def sort_domain_by_car
     end
   end
 
-  puts "10.每款车型的域名排名"
-  keyword_domain_counts.each do |keyword, domain_counts|
-    puts "#{keyword}\t#{domain_counts.sort_by {|k, v| v}.reverse.slice(0, 10)}"
-  end
-  puts "\n"
+  #puts "10.每款车型的域名排名"
+  #keyword_domain_counts.each do |keyword, domain_counts|
+  #  puts "#{keyword}\t#{domain_counts.sort_by {|k, v| v}.reverse.slice(0, 10)}"
+  #end
+  #puts "\n"
+  puts MultiJson.dump(keyword_domain_counts)
 end
 
 private
@@ -342,6 +345,26 @@ def load_json_file(file_path, key_name)
   json_map
 end
 
+def uniq_record(file_path, key_name)
+  json_map = Set.new
+  File.open("#{file_path}.new", "w") do |new_file|
+    File.open(file_path).each_line do |line|
+      begin
+        json = MultiJson.load(line)
+        key = json[key_name]
+
+        unless json_map.include?(key)
+          new_file.puts json
+
+          json_map.add(key)
+        end
+      rescue Exception => e
+        puts e.message
+      end
+    end
+  end
+end
+
 
 def keyword_weibo_info(&block)
   cookie_weiboinfo = load_cookie_weiboinfo
@@ -358,16 +381,17 @@ def keyword_weibo_info(&block)
 end
 
 
-stat_cookie_count_by_car
-stat_cookie_count_by_twocar
+#stat_cookie_count_by_car
+#stat_cookie_count_by_twocar
 
-sort_firstlevel_interest
-sort_secondlevel_interest
+#sort_firstlevel_interest
+#sort_secondlevel_interest
 
-stat_gender
-stat_age
-stat_provice
-stat_city
+#stat_gender
+#stat_age
+#stat_provice
+#stat_city
 
-sort_domain
-sort_domain_by_car
+#sort_domain
+#sort_domain_by_car
+

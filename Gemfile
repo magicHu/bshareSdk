@@ -38,6 +38,9 @@ gem 'simple_form'
 gem 'roo'
 gem 'multi_json'
 
+gem 'hashie', "~> 2.0.3"
+gem 'weibo_2', :git => 'https://github.com/simsicon/weibo_2.git'
+
 group :development do
   gem "better_errors"
   gem "binding_of_caller"
