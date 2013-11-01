@@ -1,13 +1,19 @@
+require 'httparty'
 
-require 'weibo_2'
+@access_token = "2.003k6msBdANkCD0d72ec0623dEXb9E"
+#uid = "1725593694"
 
-WeiboOAuth2::Config.api_key = ""
-WeiboOAuth2::Config.api_secret = ""
-WeiboOAuth2::Config.redirect_uri = ""
+def get_screen_name(uid)
+  url = "https://api.weibo.com/2/users/show.json?access_token=#{@access_token}&uid=#{uid}"
+  response = HTTParty.get(url)
+  respone_body = response.body
+  json = MultiJson.load(respone_body)
+  json['screen_name']
+end
 
-client = WeiboOAuth2::Client.new
-puts client.access_token
-client.access_token = '2.003k6msBdANkCD0d72ec0623dEXb9E'
-puts client
-puts client.users
-puts client.users.show({'access_token' => '2.003k6msBdANkCD0d72ec0623dEXb9E', 'uid' => '1725593694'})
+File.open("uids.txt").each_line do |line|
+  words = line.split("\t")
+  uid = words[0]
+
+  puts get_screen_name(uid)
+end

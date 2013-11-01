@@ -30,16 +30,17 @@ gem 'backbone-on-rails', '~> 1.0.0.0'
 
 # http client
 gem 'faraday'
+gem 'httparty'
 # RESTful API
-gem 'grape'
+gem 'grape', '~> 0.6.1'
 gem 'rest-client'
 gem 'simple_form'
 
 gem 'roo'
 gem 'multi_json'
 
-gem 'hashie', "~> 2.0.3"
-gem 'weibo_2', :git => 'https://github.com/simsicon/weibo_2.git'
+#gem 'weibo_2', :git => 'https://github.com/simsicon/weibo_2.git', :branch => 'master'
+gem 'weibo_2'
 
 group :development do
   gem "better_errors"
